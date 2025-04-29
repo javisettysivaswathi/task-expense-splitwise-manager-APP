@@ -1,0 +1,710 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb; /* Light background color */
+  color: #111827;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  background-color: #1e40af; /* Dark Blue background */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  padding-left: 30px;
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #1e3a8a; /* Navy Blue background */
+  color: white;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#sidebar a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+#sidebar a:hover {
+  background-color: #60a5fa; /* Light Blue on hover */
+  border-radius: 5px;
+}
+
+#content {
+  margin-left: 270px; /* Sidebar width */
+  padding: 20px;
+  padding-top: 60px; /* Prevent header overlap */
+  width: calc(100% - 270px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px; /* Space between sidebar and content */
+}
+
+.section {
+  display: none; /* Hide sections initially */
+}
+
+.section-active {
+  display: block; 
+  margin-left: 30px;/* Show the active section */
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.add-button {
+  background-color: #3b82f6; /* Vibrant Blue button */
+  color: white;
+  padding: 15px;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  background-color: #2563eb;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.list-container {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #3b82f6; /* Same Vibrant Blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+#suggestionInput {
+  width: 100%;
+}
+
+.collapse-button {
+  background-color: #e5e7eb;
+  color: #374151;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.collapse-button:hover {
+  background-color: #d1d5db;
+}
+
+footer {
+  background-color: #1e3a8a; /* Match sidebar navy color */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#quoteTextContainer {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  margin-left: 20px; /* Additional space from the left */
+}
+
+#quoteText {
+  font-size: 18px;
+  font-style: italic;
+  color: #374151;
+  text-align: center;
+}
+
+#author {
+  text-align: right;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #6b7280;
+}
+
+#refreshButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#refreshButton:hover {
+  background-color: #2563eb;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 200px;
+  }
+
+  #content {
+    margin-left: 220px;
+  }
+
+  .add-button {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sidebar {
+    width: 150px;
+  }
+
+  #content {
+    margin-left: 170px;
+  }
+
+  h2, h3 {
+    font-size: 22px;
+  }
+
+  .add-button {
+    padding: 8px;
+  }
+
+  button {
+    padding: 6px 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+
+
+body {
+  background-color: #ecf0f1; /* Light Grey */
+  color: #2c3e50; /* Navy Bluish Text */
+}
+
+header {
+  background-color: #2c3e50; /* Light Navy */
+  color: white;
+  text-align: center;
+}
+
+#sidebar {
+  background-color: #34495e; /* Navy-Grey */
+  color: white;
+}
+
+#sidebar a {
+  color: white;
+}
+
+#sidebar a:hover {
+  background-color: #3d566e; /* Slightly lighter navy */
+  border-radius: 5px;
+}
+
+.add-button, button, #refreshButton {
+  background-color: #2c3e50; /* Light Navy */
+  color: white;
+}
+
+.add-button:hover, button:hover, #refreshButton:hover {
+  background-color: #27ae60; /* Greenish hover */
+}
+
+footer {
+  background-color: #34495e; /* Navy-Grey */
+  color: white;
+}
+
+.form-container, #quoteTextContainer {
+  background-color: #ffffff; /* White */
+}
+#historySection {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 80%;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 600px;
+}
+
+#actionHistoryContainer {
+  margin-top: 20px;
+  background-color: #f9fafb; /* Light background for the history container */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+#actionHistoryList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#actionHistoryList li {
+  background-color: #e2e8f0; /* Light blue background for each item */
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+/* Add this to your existing CSS file */
+
+/* Set the background image for the entire page */
+body {
+  background-image: url('https://images.pexels.com/photos/3727468/pexels-photo-3727468.jpeg'); /* Online background image */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Makes sure the background image covers the entire viewport height */
+}
+
+/* Optional: Adjusting text and content to make it stand out better against the background */
+#content {
+  color: #fff; /* White text for better visibility */
+  padding: 20px;
+}
+
+header {
+  font-size: 2em;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark semi-transparent background behind header */
+}
+
+footer {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark semi-transparent background behind footer */
+  text-align: center;
+  padding: 10px;
+}
+
+#sidebar a {
+  color: white; /* Links color */
+  text-decoration: none; /* Remove underline */
+  display: block;
+  margin: 10px 0;
+}
+/* Sidebar Link Hover Effect */
+#sidebar a {
+  color: white; /* Default color */
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for a modern look */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sidebar a:hover {
+  background-color: #007BFF; /* Highlight color */
+  color: white; /* Ensure the text is visible */
+}
+/* Sticky Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  padding-top: 20px;
+  z-index: 10; /* Keeps it above other content */
+}
+
+#content {
+  margin-left: 220px; /* Add margin so content doesn't overlap with sidebar */
+}
+/* For smaller screens, adjust the layout */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  #content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  /* Stack form fields on top of each other */
+  .form-container input, .form-container textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #333;
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  display: none;
+}
+
+.notification.success {
+  background-color: green;
+}
+
+.notification.error {
+  background-color: red;
+}
+
+
+/* CSS for fade-in effect */
+li {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+/* Style for Hamburger Menu */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    transition: 0.3s;
+    left: 0;
+    top: 0;
+    background-color: #333;
+  }
+  
+  #sidebar a {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+
+  .active-sidebar {
+    width: 250px; /* Sidebar becomes visible */
+  }
+}
+/* Title Styles */
+#title {
+  text-align: left; /* Align title to the left */
+  margin: 20px 0; /* Add margin for spacing */
+  font-size: 24px;
+}
+
+/* Style for Search Bar Container */
+#searchBarContainer {
+  margin-top: 10px; /* Add some space below the title */
+  position: absolute; /* Position the search bar outside sidebar */
+  top: 80px; /* Adjust the position below the title */
+  right: 20px; /* Position it on the right side */
+  z-index: 101; /* Ensure it's visible above other content */
+  display: flex;
+  align-items: center; /* Vertically center the search bar and button */
+}
+
+/* Style for Search Input */
+#searchBar {
+  width: 250px; /* Set width */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+}
+
+/* Style for Search Button */
+.search-button {
+  font-size: 16px; /* Smaller font size */
+  padding: 10px 15px; /* Button size */
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px; /* Add space between input and button */
+}
+
+.search-button:hover {
+  background-color: #444; /* Slightly lighter on hover */
+}
+/* General styles */
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Launch container */
+.launch {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container */
+.login-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+button.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0056b3;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.login-btn:hover {
+  background-color: #004494;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Page content after login */
+.page-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+button.logout-btn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.logout-btn:hover {
+  background-color: #c0392b;
+}
+.form-container {
+  transition: all 0.3s ease-in-out;
+}
+/* Common body style */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Background for the login page */
+body.login-page {
+  background: url('https://images.unsplash.com/photo-1601597111025-321c381fa3ab?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Background for the main app */
+body.main-page {
+  background: url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Login container styling */
+.login-container {
+  background: rgba(255, 255, 255, 0.9); /* white box with transparency */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 320px;
+  margin: 6% auto;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Main content styling */
+#mainContentContainer {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85); /* soft white background on top of image */
+  margin: 2rem;
+  border-radius: 10px;
+}
+
+.title-section {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
