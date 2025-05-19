@@ -1,3 +1,4 @@
+  GNU nano 7.2            .github/workflows/python-app.yml
 name: Python CI
 
 on:
@@ -14,3 +15,4 @@ jobs:
     - uses: actions/checkout@v3
     - name: Run Python script
       run: python3 main.py
+
