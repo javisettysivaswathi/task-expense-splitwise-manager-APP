@@ -1,2 +1,0 @@
-print("lets practice deveops")
-
